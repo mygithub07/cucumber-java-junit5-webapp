@@ -1,0 +1,211 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-03-27T21:24:00.344Z",
+        "line": 3,
+        "name": "get employee",
+        "description": "",
+        "id": "second-feature-test;get-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1160594000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "an employee exist in the database with id \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2\"",
+                  "offset": 42
+                }
+              ],
+              "location": "com.test.stepdefs.secondIT.an_employee_exists_with_id(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1703586000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user retrieves employee info by id",
+            "match": {
+              "location": "com.test.stepdefs.secondIT.user_retrieves_employee_info_by_id()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 60485000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the status code for get employee is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 36
+                }
+              ],
+              "location": "com.test.stepdefs.secondIT.verify_status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 754456000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "response includes the following employee info",
+            "match": {
+              "location": "com.test.stepdefs.secondIT.employee_response_equals(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "status",
+                  "success"
+                ]
+              },
+              {
+                "cells": [
+                  "data.employee_name",
+                  "Garrett Winters"
+                ]
+              },
+              {
+                "cells": [
+                  "data.id",
+                  "2"
+                ]
+              },
+              {
+                "cells": [
+                  "data.employee_age",
+                  "63"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@get"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-27T21:24:04.122Z",
+        "line": 15,
+        "name": "post employee",
+        "description": "",
+        "id": "second-feature-test;post-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1081226000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "an employee record is created with values",
+            "match": {
+              "location": "com.test.stepdefs.secondIT.create_employee_record(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "employee_name",
+                  "Test Name1"
+                ]
+              },
+              {
+                "cells": [
+                  "age",
+                  "41"
+                ]
+              },
+              {
+                "cells": [
+                  "salary",
+                  "320000"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-27T21:24:05.220Z",
+        "line": 22,
+        "name": "post another employee",
+        "description": "",
+        "id": "second-feature-test;post-another-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 639825000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "an employee record is created with other values",
+            "match": {
+              "location": "com.test.stepdefs.secondIT.create_another_employee_record(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "employee_name",
+                  "Test Name2"
+                ]
+              },
+              {
+                "cells": [
+                  "age",
+                  "50"
+                ]
+              },
+              {
+                "cells": [
+                  "salary",
+                  "500000"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@post"
+          }
+        ]
+      }
+    ],
+    "name": "second feature test",
+    "description": "",
+    "id": "second-feature-test",
+    "keyword": "Feature",
+    "uri": "classpath:com/test/secondTest.feature",
+    "tags": []
+  }
+]
