@@ -35,8 +35,8 @@ steps:
       goals: 'clean verify -P acceptanceTests -e -X'
 
   - task: PublishPipelineArtifact@1
-      displayName: Publish war
-      inputs:
+    displayName: Publish war
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
         artifactName: 'web-apiTest-cu-ra-j5-1.0-SNAPSHOT.war'
 
