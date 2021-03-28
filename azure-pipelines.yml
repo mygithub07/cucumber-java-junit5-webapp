@@ -47,7 +47,7 @@ steps:
         artifactName: 'pom.xml'
 
   - task: PublishPipelineArtifact@1
-      displayName: Publish pom
+      displayName: Publish cucumber report
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
         artifactName: 'cucumber.html'
