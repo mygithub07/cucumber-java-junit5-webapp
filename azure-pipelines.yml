@@ -41,14 +41,14 @@ steps:
         artifactName: 'web-apiTest-cu-ra-j5-1.0-SNAPSHOT.war'
 
   - task: PublishPipelineArtifact@1
-      displayName: Publish pom
-      inputs:
+    displayName: Publish pom
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/
         artifactName: 'pom.xml'
 
   - task: PublishPipelineArtifact@1
-      displayName: Publish cucumber report
-      inputs:
+    displayName: Publish cucumber report
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
         artifactName: 'cucumber.html'
   # if get error "A task is missing. The pipeline references.." install it manually from marketplace
