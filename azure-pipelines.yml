@@ -6,8 +6,25 @@
 trigger:
   - main
 
-pool:
-  vmImage: ubuntu-latest
+resources:
+  containers:
+    - container: u14
+      image: ubuntu:14.04
+
+    - container: u16
+      image: ubuntu:16.04
+
+jobs:
+  - job: RunInContainer
+    pool:
+      vmImage: 'ubuntu-18.04'
+
+    strategy:
+      matrix:
+        ubuntu14:
+          containerResource: u14
+        ubuntu16:
+          containerResource: u16
 
 steps:
 

@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-03-27T21:24:00.344Z",
+        "start_timestamp": "2021-05-05T18:30:25.937Z",
         "line": 3,
         "name": "get employee",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1160594000,
+              "duration": 1023255000,
               "status": "passed"
             },
             "line": 5,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 1703586000,
+              "duration": 1828529000,
               "status": "passed"
             },
             "line": 6,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 60485000,
+              "duration": 38173000,
               "status": "passed"
             },
             "line": 7,
@@ -61,7 +61,7 @@
           },
           {
             "result": {
-              "duration": 754456000,
+              "duration": 705896000,
               "status": "passed"
             },
             "line": 8,
@@ -105,7 +105,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-27T21:24:04.122Z",
+        "start_timestamp": "2021-05-05T18:30:29.626Z",
         "line": 15,
         "name": "post employee",
         "description": "",
@@ -115,8 +115,9 @@
         "steps": [
           {
             "result": {
-              "duration": 1081226000,
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: Different value found in node \"$.data.salary\", expected: \u003cstring\u003e but was: \u003cmissing\u003e.\n\tat net.javacrumbs.jsonunit.core.internal.matchers.InternalMatcher.failWithMessage(InternalMatcher.java:237)\n\tat net.javacrumbs.jsonunit.core.internal.matchers.InternalMatcher.failOnDifference(InternalMatcher.java:187)\n\tat net.javacrumbs.jsonunit.core.internal.matchers.InternalMatcher.failOnDifference(InternalMatcher.java:174)\n\tat net.javacrumbs.jsonunit.core.internal.matchers.InternalMatcher.isPresent(InternalMatcher.java:274)\n\tat net.javacrumbs.jsonunit.core.internal.matchers.InternalMatcher.assertType(InternalMatcher.java:289)\n\tat net.javacrumbs.jsonunit.assertj.JsonAssert.assertType(JsonAssert.java:267)\n\tat net.javacrumbs.jsonunit.assertj.JsonAssert.isString(JsonAssert.java:209)\n\tat com.test.stepdefs.secondIT.create_employee_record(secondIT.java:128)\n\tat ✽.an employee record is created with values(classpath:com/test/secondTest.feature:16)\n",
+              "duration": 1046227000,
+              "status": "failed"
             },
             "line": 16,
             "name": "an employee record is created with values",
@@ -153,7 +154,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-27T21:24:05.220Z",
+        "start_timestamp": "2021-05-05T18:30:30.695Z",
         "line": 22,
         "name": "post another employee",
         "description": "",
@@ -163,7 +164,7 @@
         "steps": [
           {
             "result": {
-              "duration": 639825000,
+              "duration": 715636000,
               "status": "passed"
             },
             "line": 23,
