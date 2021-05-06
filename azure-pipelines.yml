@@ -72,7 +72,7 @@ jobs:
       displayName: Publish cucumber report
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
-        artifactName: 'cucumber.html'
+        artifactName: 'drop-cucumber-$(CustomArtifactName)'
   # if get error "A task is missing. The pipeline references.." install it manually from marketplace
     - task: PublishCucumberReport@1
       inputs:
