@@ -28,19 +28,19 @@ jobs:
 
   - steps:
   - task: JavaToolInstaller@0
-     inputs:
+    inputs:
       versionSpec: '11'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
 
   - task: NodeTool@0
-     displayName: 'Install Node 12.x'
-      inputs:
+    displayName: 'Install Node 12.x'
+    inputs:
       versionSpec: 12.x
 
   #removed 'javaHomeOption' and  'jdkVersionOption' as using task 'JavaToolInstaller` , which sets java home on agent
   - task: Maven@3
-      inputs:
+    inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
       #javaHomeOption: 'JDKVersion'
@@ -51,24 +51,24 @@ jobs:
       goals: 'clean verify -P acceptanceTests -e -X'
 
   - task: PublishPipelineArtifact@1
-     displayName: Publish war
-     inputs:
+    displayName: Publish war
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
         artifactName: 'web-apiTest-cu-ra-j5-1.0-SNAPSHOT.war'
 
   - task: PublishPipelineArtifact@1
-     displayName: Publish pom
-     inputs:
+    displayName: Publish pom
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/
         artifactName: 'pom.xml'
 
   - task: PublishPipelineArtifact@1
-     displayName: Publish cucumber report
-     inputs:
+    displayName: Publish cucumber report
+    inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
         artifactName: 'cucumber.html'
   # if get error "A task is missing. The pipeline references.." install it manually from marketplace
   - task: PublishCucumberReport@1
-     inputs:
+    inputs:
       jsonDir: ./target/
       outputPath: ./target/
