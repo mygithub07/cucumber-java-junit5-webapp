@@ -8,23 +8,23 @@ trigger:
 
 resources:
   containers:
-    - container: u14
-      image: ubuntu:14.04
+    - container: WinServer2019
+      image: windows-2019
 
-    - container: u16
-      image: ubuntu:16.04
+    - container: WinServer2016
+      image: vs2017-win2016
 
 jobs:
   - job: RunInContainer
     pool:
-      vmImage: 'ubuntu-18.04'
+      vmImage: 'windows-latest'
 
     strategy:
       matrix:
-        ubuntu14:
-          containerResource: u14
-        ubuntu16:
-          containerResource: u16
+        WinServ2019:
+          containerResource: WinServer2019
+        WinServ2016:
+          containerResource: WinServer2016
 
     steps:
     - task: JavaToolInstaller@0
