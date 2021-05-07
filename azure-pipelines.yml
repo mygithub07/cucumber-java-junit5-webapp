@@ -62,19 +62,19 @@ jobs:
       displayName: Publish war
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
-        artifactName: 'drop-war-'$(CustomArtifactName)
+        artifactName: 'drop-war-''$(CustomArtifactName)'
 
     - task: PublishPipelineArtifact@1
       displayName: Publish pom
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/
-        artifactName: 'drop-pom-'$(CustomArtifactName)
+        artifactName: 'drop-pom-''$(CustomArtifactName)'
 
     - task: PublishPipelineArtifact@1
       displayName: Publish cucumber report
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/target/
-        artifactName: 'drop-cucumber-'$(CustomArtifactName)
+        artifactName: 'drop-cucumber-''$(CustomArtifactName)'
   # if get error "A task is missing. The pipeline references.." install it manually from marketplace
     - task: PublishCucumberReport@1
       inputs:
