@@ -18,7 +18,8 @@ jobs:
   - job: RunInContainer
     pool:
       vmImage: 'windows-latest'
-
+    variables:
+    - group: var-group
     strategy:
       matrix:
         WinServ2019:
@@ -54,7 +55,8 @@ jobs:
       displayName: 'Inline Powershell'
       inputs:
         Script:
-          Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
+          #Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
+          Write-Host "##vso[variables.CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
 
     - task: PublishPipelineArtifact@1
       displayName: Publish war
