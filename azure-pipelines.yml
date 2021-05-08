@@ -56,8 +56,8 @@ jobs:
       inputs:
         Script:
           #Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
-          Write-Host "##vso[variables.CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
-
+          Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
+          Write-Host "Custom Artifact Name = $(CustomArtifactName)"
     - task: PublishPipelineArtifact@1
       displayName: Publish war
       inputs:
