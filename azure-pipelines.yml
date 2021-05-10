@@ -6,13 +6,13 @@
 trigger:
   - main
 
-resources:
-  containers:
-    - container: WinServer2019
-      image: windows-2019
+#resources:
+  #containers:
+   # - container: WinServer2019
+    #  image: windows-2019
 
-    - container: WinServer2016
-      image: vs2017-win2016
+   # - container: WinServer2016
+   #   image: vs2017-win2016
 
 jobs:
   - job: RunInContainer
@@ -23,9 +23,11 @@ jobs:
     strategy:
       matrix:
         WinServ2019:
-          containerResource: WinServer2019
+          #containerResource: WinServer2019
+          containerImage: WinServer2019
         WinServ2016:
-          containerResource: WinServer2016
+          containerImage: vs2017-win2016
+          #containerResource: WinServer2016
 
     steps:
     - task: JavaToolInstaller@0
@@ -55,7 +57,9 @@ jobs:
       displayName: 'Inline Powershell'
       inputs:
         Script:
-          #Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
+          # set group variable CustomArtifactName to a unique value so it can be concatenated in publish
+          #tasks to make the artifact name unique to avoid overwriting issue for matrix strategy
+          #group variable is defined in build pipeline in azure UI
           Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
           Write-Host "Custom Artifact Name = $(CustomArtifactName)"
     - task: PublishPipelineArtifact@1
