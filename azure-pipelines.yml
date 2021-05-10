@@ -24,11 +24,12 @@ jobs:
       matrix:
         WinServ2019:
           #containerResource: WinServer2019
-          containerImage: WinServer2019
+          #containerImage: WinServer2019
+          containerImage: selenium/hub:4.0.0-beta-3-20210426
         WinServ2016:
-          containerImage: vs2017-win2016
+          #containerImage: vs2017-win2016
           #containerResource: WinServer2016
-
+          containerImage: selenium/hub:4.0.0-beta-3-20210426
     steps:
     - task: JavaToolInstaller@0
       inputs:
