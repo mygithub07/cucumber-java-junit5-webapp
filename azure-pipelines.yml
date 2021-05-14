@@ -85,3 +85,33 @@ jobs:
       inputs:
         jsonDir: ./target/
         outputPath: ./target/
+
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+                $token = "62x3rhx6icnh2le77hg7wewionwzesvcryhjnqcbhvoys3tccf5a"
+
+                $url="https://dev.azure.com/neeshpal/APITesting/_apis/distributedtask/variablegroups/1?api-version=5.0-preview.1"
+
+                $token = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(":$($token)"))
+
+                $JSON = @'
+                {
+                  "id":1,
+                "type": "Vsts",
+                  "name": "var-group",
+                  "description": "Updated variable group",
+
+                  "variables": {
+                    "CustomArtifactName": {
+                      "value": "$(CustomArtifactName)"
+                    }
+
+                  }
+
+                }
+                '@
+
+                $response = Invoke-RestMethod -Uri $url -Headers @{Authorization = "Basic $token"} -Method PUT -Body $JSON -ContentType application/json
+                Write-Host "New Variable Value:"$response.variables.CustomArtifactName.value
