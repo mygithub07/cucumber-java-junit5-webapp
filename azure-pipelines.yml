@@ -62,7 +62,6 @@ jobs:
           #tasks to make the artifact name unique to avoid overwriting issue for matrix strategy
           #group variable is defined in build pipeline in azure UI
           Write-Host "##vso[task.setvariable variable=CustomArtifactName]$(Get-Date -Format yyyyMMddhhmmss)"
-          Write-Host "Custom Artifact Name = $(CustomArtifactName)"
     - task: PublishPipelineArtifact@1
       displayName: Publish war
       inputs:
