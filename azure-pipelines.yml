@@ -72,7 +72,7 @@ jobs:
       displayName: Publish pom
       inputs:
         pathToPublish: $(System.DefaultWorkingDirectory)/s/
-        artifactName: 'drop-pom-''$(CustomArtifactName)'
+        artifactName: 'drop-pom-'$(CustomArtifactName)
 
     - task: PublishPipelineArtifact@1
       displayName: Publish cucumber report
